@@ -1,0 +1,32 @@
+Enter a command (show/add/remove/clear/exit): show
+No items in the to-do list.
+
+Enter a command (show/add/remove/clear/exit): add
+Enter the item to add: Buy groceries
+Item added to the to-do list.
+
+Enter a command (show/add/remove/clear/exit): add
+Enter the item to add: Pay bills
+Item added to the to-do list.
+
+Enter a command (show/add/remove/clear/exit): show
+To-Do List:
+1. Buy groceries
+2. Pay bills
+
+Enter a command (show/add/remove/clear/exit): remove
+Enter the item number to remove: 1
+Item removed from the to-do list.
+
+Enter a command (show/add/remove/clear/exit): show
+To-Do List:
+1. Pay bills
+
+Enter a command (show/add/remove/clear/exit): clear
+To-do list cleared.
+
+Enter a command (show/add/remove/clear/exit): show
+No items in the to-do list.
+
+Enter a command (show/add/remove/clear/exit): exit
+Goodbye!
