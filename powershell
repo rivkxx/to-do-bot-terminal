@@ -1,0 +1,61 @@
+$todoList = @()
+
+function ShowTodoList {
+    if ($todoList.Count -eq 0) {
+        Write-Host "No items in the to-do list."
+    }
+    else {
+        Write-Host "To-Do List:"
+        for ($i = 0; $i -lt $todoList.Count; $i++) {
+            Write-Host "$($i + 1). $($todoList[$i])"
+        }
+    }
+}
+
+function AddTodoItem {
+    $item = Read-Host "Enter the item to add:"
+    $todoList += $item
+    Write-Host "Item added to the to-do list."
+}
+
+function RemoveTodoItem {
+    $itemIndex = Read-Host "Enter the item number to remove:"
+    if ([int]$itemIndex -ge 1 -and [int]$itemIndex -le $todoList.Count) {
+        $todoList.RemoveAt($itemIndex - 1)
+        Write-Host "Item removed from the to-do list."
+    }
+    else {
+        Write-Host "Invalid item number."
+    }
+}
+
+function ClearTodoList {
+    $todoList = @()
+    Write-Host "To-do list cleared."
+}
+
+while ($true) {
+    $input = Read-Host "Enter a command (show/add/remove/clear/exit):"
+    
+    switch ($input.ToLower()) {
+        "show" {
+            ShowTodoList
+        }
+        "add" {
+            AddTodoItem
+        }
+        "remove" {
+            RemoveTodoItem
+        }
+        "clear" {
+            ClearTodoList
+        }
+        "exit" {
+            Write-Host "Goodbye!"
+            break
+        }
+        default {
+            Write-Host "Invalid command."
+        }
+    }
+}
